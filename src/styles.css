@@ -1,1 +1,15 @@
-
+/*fondo secciones general*/
+section.about,section.Experiencia,section.Educación,section.HardSoft,section.Proyectos{
+    background: rgb(149,207,207);
+background: linear-gradient(90deg, rgba(149,207,207,0.9475140397956058) 37%, rgba(243,149,129,0.9447129193474265) 77%, rgba(76,100,106,1) 98%);
+}
+/* general para todos los textos*/    
+.bg-black.text-white.text-center.fs-6{
+    background: rgb(223,143,152);
+    background: radial-gradient(circle, rgba(223,143,152,1) 27%, rgba(186,76,84,1) 61%, rgba(74,159,148,0.9335084375547094) 99%);   
+}
+/*textos body index*/
+body.index{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
