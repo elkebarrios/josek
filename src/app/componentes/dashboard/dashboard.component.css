@@ -1,0 +1,11 @@
+/*fondo dashboard*/
+.cambiosdb{
+    background: rgb(149,207,207);
+    background: linear-gradient(90deg, rgba(149,207,207,0.9475140397956058) 37%, rgba(243,149,129,0.9447129193474265) 77%, rgba(76,100,106,1) 98%); 
+}
+/*dasboard list -group*/
+.list-group.classds{
+    margin-top: 40%;
+    margin-left: 60%;
+    min-width: 50rem;
+}

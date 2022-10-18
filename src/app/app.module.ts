@@ -12,8 +12,10 @@ import { HardysoftComponent } from './componentes/hardysoft/hardysoft.component'
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { FooterComponent } from './componentes/footer/footer.component';
-import { Pagina404Component } from './componentes/pagina404/pagina404.component';
-import { Error404Component } from './componentes/pagina404/error404.component';
+import { Error404Component } from './componentes/error404/error404.component';
+import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { IndexComponent } from './componentes/index/index.component'
 
 @NgModule({
   declarations: [
@@ -27,8 +29,10 @@ import { Error404Component } from './componentes/pagina404/error404.component';
     ProyectosComponent,
     ModalComponent,
     FooterComponent,
-    Pagina404Component,
-    Error404Component
+    Error404Component,
+    DashboardComponent,
+    LoginComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
