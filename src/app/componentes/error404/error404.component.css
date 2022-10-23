@@ -188,3 +188,7 @@ h1 small {
 		opacity: .3
 	}
 }
+.btn.btn-primary {
+	text-align: center;
+	background-color: blueviolet;
+}

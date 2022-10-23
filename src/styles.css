@@ -1,5 +1,5 @@
 /*fondo secciones general*/
-section.about,section.Experiencia,section.Educación,section.HardSoft,section.Proyectos{
+section.about,section.Experiencia,section.Educación,section.HardSoft,section.Proyectos,.site{
     background: rgb(149,207,207);
 background: linear-gradient(90deg, rgba(149,207,207,0.9475140397956058) 37%, rgba(243,149,129,0.9447129193474265) 77%, rgba(76,100,106,1) 98%);
 font-family: Arial, Helvetica, sans-serif;
