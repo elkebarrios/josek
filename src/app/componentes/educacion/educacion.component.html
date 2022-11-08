@@ -1,18 +1,24 @@
-        <!-- Section educación -->
+<!-- Section educación -->
 <section class="personal mt-1">
   <div class="container text-center">
     <div class="col-12 mt-1 pt-3">
       <h3>EDUCACIÓN</h3>
       <div class="row" *ngFor="let educacion of educaciones">
-            <div class="col-2 mt-3">
-              <img [src]="educacion.logoInstitucion" class=" rounded-circle w-50" alt="...">
-            </div>
-            <div class="col-9 mt-4">
-            <p class="text-start">{{educacion.nombreInstitucion}}<br>
-              Titulo Obtenido: {{educacion.tituloObtenido}}, <br>
-              {{educacion.anoFin}}</p>
-            </div>
-          </div>
-          </div>
-        </div>            
- </section>
+        <div class="col-2 mt-3">
+          <img
+            [src]="educacion.logoInstitucion"
+            class="rounded-circle w-50"
+            alt="..."
+          />
+        </div>
+        <div class="col-9 mt-4">
+          <p class="text-start">
+            {{ educacion.nombreInstitucion }}<br />
+            Titulo Obtenido: {{ educacion.tituloObtenido }}, <br />
+            {{ educacion.anoFin }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

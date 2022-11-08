@@ -3,19 +3,24 @@
   <div class="container text-center">
     <div class="row">
       <div class="col-12 mt-5">
-    <h3>PROYECTOS</h3>
-    <div *ngFor="let proyecto of proyectos">
-        <h5 class="text-start">{{ proyecto.nombre | uppercase }}</h5>
-        <br>
-        <h5 class="descripcion">{{ proyecto.descripcion }}</h5>
-        <p><a [href]="proyecto.link" target="_blank">Link Portfolio</a></p>
-        <br>
-        <ul class="proyectos list-group list-group-horizontal" *ngFor="let imagen of proyecto.imagenes">
-          <div class="img-container">
-          <li class="list-group-item"><img [src]="imagen" class="rounded float" alt="foto"></li>
+        <h3>PROYECTOS</h3>
+        <div *ngFor="let proyecto of proyectos">
+          <h5 class="text-start">{{ proyecto.nombre | uppercase }}</h5>
+          <br />
+          <h5 class="descripcion">{{ proyecto.descripcion }}</h5>
+          <p><a [href]="proyecto.link" target="_blank">Link Portfolio</a></p>
+          <br />
+          <ul
+            class="proyectos list-group list-group-horizontal"
+            *ngFor="let imagen of proyecto.imagenes"
+          >
+            <div class="img-container">
+              <li class="list-group-item">
+                <img [src]="imagen" class="rounded float" alt="foto" />
+              </li>
+            </div>
+          </ul>
         </div>
-        </ul>
-    </div>
       </div>
     </div>
   </div>

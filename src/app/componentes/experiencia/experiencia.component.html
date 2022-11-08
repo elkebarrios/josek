@@ -1,23 +1,27 @@
 <section class="personal mt-1">
-    <div class="container text-center">
-      <div class="col-12 mt-1 pt-3">
-        <h3>EXPERIENCIA</h3>
-        <div class="row" *ngFor="let experiencia of experiencias">
-          <div class="col-2 mt-3">
-            <img [src]="experiencia.logoEmpresa" class=" rounded-circle w-50" alt="...">
-          </div>
-          <div class="col-9 mt-4">
-            <p class="text-start"> CARGO: {{experiencia.cargo |uppercase}}<br> 
-              Empresa: {{experiencia.nombreEmpresa}}<br>
-              Actualidad: {{experiencia.empleoActual}}<br>
-              Inicio: {{experiencia.FechaInicio}}<br>
-              Fin: {{experiencia.FechaFin}}<br>
-              {{experiencia.descripcionCargo}}<br>
-              {{experiencia.aptitud}}
-            </div>
-        </div>  
+  <div class="container text-center">
+    <div class="col-12 mt-1 pt-3">
+      <h3>EXPERIENCIA</h3>
+      <div class="row" *ngFor="let experiencia of experiencias">
+        <div class="col-2 mt-3">
+          <img
+            [src]="experiencia.logoEmpresa"
+            class="rounded-circle w-50"
+            alt="..."
+          />
         </div>
-    </div>          
-   </section>
-
-
+        <div class="col-9 mt-4">
+          <p class="text-start">
+            CARGO: {{ experiencia.cargo | uppercase }}<br />
+            Empresa: {{ experiencia.nombreEmpresa }}<br />
+            Actualidad: {{ experiencia.empleoActual }}<br />
+            Inicio: {{ experiencia.FechaInicio }}<br />
+            Fin: {{ experiencia.FechaFin }}<br />
+            {{ experiencia.descripcionCargo }}<br />
+            {{ experiencia.aptitud }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,27 +1,44 @@
 <!-- Modal Banner -->
-<div class="modal fade" id="bannerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Banner</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div
+  class="modal fade"
+  id="bannerModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Banner</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="formFile" class="form-label"
+            >Seleccionar Foto Banner</label
+          >
+          <input class="form-control" type="file" id="formFile" />
         </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="formFile" class="form-label">Seleccionar Foto Banner</label>
-            <input class="form-control" type="file" id="formFile">
-          </div>
-          <div class="mb-3">
-            <label for="datospersonales" class="form-label">Nombre, Apellido y Cargo</label>
-            <textarea class="form-control" id="datospersonales" placeholder=""></textarea>
-          </div>
+        <div class="mb-3">
+          <label for="datospersonales" class="form-label"
+            >Nombre, Apellido y Cargo</label
+          >
+          <textarea
+            class="form-control"
+            id="datospersonales"
+            placeholder=""
+          ></textarea>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Guardar</button>
-          <button type="button" class="btn btn-danger">Borrar</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-danger">Borrar</button>
+      </div>
     </div>
   </div>
-  </div>
-  
-  
+</div>
