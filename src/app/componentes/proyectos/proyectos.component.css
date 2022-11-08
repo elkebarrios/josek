@@ -1,0 +1,15 @@
+ul.proyectos {
+    background-color: none;
+    display: inline-flex;
+    flex-direction:row;
+    justify-content: space-between;
+    }
+    .img-container{
+        width: 280px;
+        height: 450px;
+        overflow:hidden;
+      }
+      .img-container img{
+        width:100%;
+        height:auto
+      }

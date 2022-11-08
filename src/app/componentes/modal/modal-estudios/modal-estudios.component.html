@@ -1,0 +1,45 @@
+<!-- Modal Estudios -->
+<div class="modal fade" id="estudiosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Estudios</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <select class="form-select mb-3" aria-label="Default select example">
+            <option selected>Añadir Institución</option>
+            <option value="1">Ministerio de Desarrollo Productivo</option>
+            <option value="2">Universidad Santa Maria</option>
+            <option value="3">Instituto Iser</option>
+            <option value="4">Open English</option>
+          </select>
+  
+          <div class="mb-3">
+            <label for="logoInstitucion" class="form-label">Seleccionar Logo Institución</label>
+            <input class="form-control" type="file" id="logoInstitucion">
+          </div>
+  
+          <div class="mb-3">
+            <label for="titulo" class="form-label">Titulo</label>
+            <input type="text" class="form-control" id="titulo">
+          </div>
+  
+          <div class="mb-3">
+            <label for="fechaFin" class="form-label">Fecha Fin</label>
+            <input type="date" class="form-control" id="fechaFin" placeholder="">
+          </div>
+  
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Cursando</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-danger">Borrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

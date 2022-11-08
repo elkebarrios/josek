@@ -1,0 +1,164 @@
+{
+    "personas":[
+        {
+        "id": 1,
+        "banner": "assets/img/saltoangel.jpg",
+        "profileImage": "assets/img/img_fotoperfilag.jpg",
+        "nombreperfil": "Elke Barrios Villamizar",
+        "tituloperfil": "Desarrolladora Full Stack",
+        "acercaDeMi": "Soy Desarolladora Full Stack Junior, graduada en Administración de Empresas con más de 15 años de experiencia, cuento con amplia trayectoria en la Banca y tesoreria, con un solido conocimiento de servicios y productos bancarios, desempeñándome como oficial de cuentas, tesorera, vendedora, permitiéndome alcanzar el desarrollo y crecimiento de las empresas. Actualmente me desempeño como Desarolladora Full Stack Jr."
+        }
+    ],
+
+    "experiencias": [
+        {
+            "id": 1,
+            "logoEmpresa": "assets/img/maxlimp.png",
+            "cargo": "Vendedora Preventista",
+            "empleoActual": "Si",
+            "FechaInicio": "01-09-2020",
+            "FechaFin": "",
+            "nombreEmpresa": "Distribuidora Maxlimp",
+            "descripcionCargo": "Enfocada en el mantenimiento de los clientes actuales y en busca de nuevos clientes. Organización de agenda para las visitas semanales. Atención a clientes.", 
+            "aptitud": "Aptitudes: Fidelización de clientes. Confidencialidad. Atención al cliente. Facilidad de adaptación. Servicio de atención al cliente."
+        },
+
+        {
+            "id": 2,
+            "logoEmpresa": "assets/img/ferralca1.jpg",
+            "cargo": "Tesorera",
+            "empleoActual":"No",
+            "FechaInicio": "01-11-2017",
+            "FechaFin": "01-12-2018",
+            "nombreEmpresa": "Ferro Aluminio, FERRALCA",
+            "descripcionCargo": "Encargada del manejo de facturación, cuentas por pagar, cuentas bancarias de la empresa. Conciliación bancarias, solicitud de cotizaciones a proveedores. Control de las exportaciones de la empresa, control del flujo de caja.",
+            "aptitud": "Aptitudes: Presentaciones. Exportaciones. Rendición de cuentas. Administración logística. Administración. Capacidad de análisis. Control interno. Gestión de proyectos. Gestión de cuentas."
+        
+        },
+
+        {
+            "id": 3,
+            "logoEmpresa": "assets/img/banesco5.png",
+            "cargo": "Oficial de Cuentas",
+            "empleoActual":"No",
+            "FechaInicio": "15-12-2008",
+            "FechaFin": "15-09-2018",
+            "nombreEmpresa": "Banesco, Banco Universal",
+            "descripcionCargo":  "Seguimiento integral a los clientes asignados, buscando su desarrollo y crecimiento en el Banco ofreciendo servicios y productos financieros. Desarrollar acciones de mejoras, dar acompañamiento administrativo, brindando seguimiento ante reclamos y requerimientos.",
+            "aptitud": "Aptitudes: Presentaciones. Fidelización de clientes. Gestión de relaciones con clientes (CRM). Seguimiento. Relaciones públicas. Resolución de problemas. Atención al cliente."
+        },
+
+        {
+            "id": 4,
+            "logoEmpresa": "assets/img/latcapital5.jpg",
+            "cargo": "Asistente Administrativo",
+            "empleoActual":"No",
+            "FechaInicio": "15-02-2008",
+            "FechaFin": "15-09-2008",
+            "nombreEmpresa": "Lat Capital de Venezuela, C.A",
+            "descripcionCargo": "Encargada del manejo de facturación, cuentas por cobrar, conciliaciones bancarias y pagos institucionales de la empresa.", 
+            "aptitud": "Aptitudes: Asistencia de administración · Aptitudes de organización. Capacidad de análisis"
+        }  
+    ],
+    
+    "educaciones":[
+    {
+        "id": 1,
+        "logoInstitucion": "assets/img/fondo-gris.webp",
+        "nombreInstitucion": "Ministerio de Desarrollo Productivo",
+        "tituloObtenido": "Desarollador Full Stack Junior",
+        "anoFin": "2023"
+    },
+    {
+        "id": 2,
+        "logoInstitucion": "assets/img/fondo-gris.webp",
+        "nombreInstitucion": "Universidad Santa Maria",
+        "tituloObtenido": "Licenciada en Administración",
+        "anoFin": "2007"
+    },
+    {
+        "id": 3,
+        "logoInstitucion": "assets/img/fondo-gris.webp",
+        "nombreInstitucion": "Instituto ISER",
+        "tituloObtenido": "Actriz",
+        "anoFin": "en curso"
+    },
+
+    {
+        "id": 4,
+        "logoInstitucion": "assets/img/fondo-gris.webp",
+        "nombreInstitucion": "Open English",
+        "tituloObtenido": "English Basic Proficienty",
+        "anoFin": "En curso"
+    }
+],
+
+ "hardSkills": [
+    {
+        "id": 1,
+        "habilidad": "HTML",
+        "porcentaje": "75"
+      },
+      {
+        "id": 2,
+        "habilidad": "CSS",
+        "porcentaje": "50"
+        },
+        {
+        "id": 3,
+        "habilidad": "Manejo del tiempo",
+        "porcentaje": "90"  
+        },
+        {
+        "id": 4,
+        "habilidad": "Paquete Office",
+        "porcentaje": "90"  
+        },
+        {
+        "id": 5,
+        "habilidad": "Flexibilidad y adaptacion",
+        "porcentaje": "100"  
+        },
+        {
+        "id": 6,
+        "habilidad": "Atención al cliente",
+        "porcentaje": "100"  
+        }     
+ ],
+
+
+ "proyectos": [
+    {
+        "id": 1,
+        "nombre": "Proyecto Argentina Programa",
+        "imagenes": [
+        "assets/img/portfolio1.png",
+        "assets/img/portfolio2.png",
+        "assets/img/portfolio3.png",
+        "assets/img/Panel.png"
+    ],
+        "descripcion": "En Construcción de mi primer Portfolio Web 2022-2023",
+        "link": "http://127.0.0.1:5500/Frontend/index.html"
+         
+    }
+ ],
+
+ "redes":[
+    {
+        "id": 1,
+        "link": "https://www.linkedin.com/in/elke-barrios-villamizar-7a23a9b8/" ,
+        "icono": "fa-brands fa-linkedin fa-2xl"  
+    },
+    {
+        "id": 2,
+        "link": "https://github.com/elkebarrios",  
+        "icono": "fa-brands fa-github fa-2xl" 
+    },
+    {
+        "id": 3,
+        "link": "https://www.instagram.com/elketrini/",
+        "icono": "fa-brands fa-instagram fa-2xl"   
+    }
+
+ ]
+}

@@ -1,52 +1,20 @@
-<section class="Experiencia mt-1">
+<section class="personal mt-1">
     <div class="container text-center">
       <div class="col-12 mt-1 pt-3">
-        <h3>Experiencia</h3>
-        <div class="row">
+        <h3>EXPERIENCIA</h3>
+        <div class="row" *ngFor="let experiencia of experiencias">
           <div class="col-2 mt-3">
-            <img src="assets/img/maxlimp.png" class=" rounded-circle w-50" alt="...">
+            <img [src]="experiencia.logoEmpresa" class=" rounded-circle w-50" alt="...">
           </div>
-          <div class="col-9 mt-5">
-            <p align="left"> Cargo: Vendedora Preventista <br>
-              Actualidad| Distribuidora Maxlimp<br>
-              • Enfocada en el mantenimiento de los clientes actuales y en busca de nuevos clientes.<br>
-              • Organización de agenda para las visitas semanales.<br>
-              • Atención a clientes.<br>
-              Aptitudes: Fidelización de clientes · Confidencialidad · Atención al cliente · Facilidad de adaptación · Servicio de atención al cliente.<p>
+          <div class="col-9 mt-4">
+            <p class="text-start"> CARGO: {{experiencia.cargo |uppercase}}<br> 
+              Empresa: {{experiencia.nombreEmpresa}}<br>
+              Actualidad: {{experiencia.empleoActual}}<br>
+              Inicio: {{experiencia.FechaInicio}}<br>
+              Fin: {{experiencia.FechaFin}}<br>
+              {{experiencia.descripcionCargo}}<br>
+              {{experiencia.aptitud}}
             </div>
-        
-          <div class="col-2 mt-3">
-            <img src="assets/img/ferralca1.jpg" class=" rounded-circle w-50" alt="...">
-          </div>
-            <div class="col-9 mt-5">
-            <p align="left">Cargo: Tesorera <br>
-              2017 - 2018| Ferro Aluminio, FERRALCA<br>
-              • Encargada del manejo de facturación, cuentas por pagar, cuentas bancarias de la empresa. <br>
-              • Conciliación bancarias, solicitud de cotizaciones a proveedores.<br>
-              • Control de las exportaciones de la empresa, control del flujo de caja.<br>
-              Aptitudes: Presentaciones · Exportaciones · Rendición de cuentas · Administración logística · Administración · Capacidad de análisis · Control interno · Gestión de proyectos · Gestión de cuentas.<p>
-          </div> 
-
-          <div class="col-2 mt-3">
-            <img src="assets/img/banesco5.png" class=" rounded-circle w-50" alt="...">
-          </div>
-            <div class="col-9 mt-5">
-            <p align="left">Cargo: Oficial de Cuentas <br>
-              2008- 2017| Banesco, Banco Universal<br>
-              • Seguimiento integral a los clientes asignados, buscando su desarrollo y crecimiento en el Banco ofreciendo servicios y productos financieros.<br>
-              • Desarrollar acciones de mejoras, dar acompañamiento administrativo, brindando seguimiento ante reclamos y requerimientos.<br> 
-              Aptitudes: Presentaciones · Fidelización de clientes · Gestión de relaciones con clientes (CRM) · Seguimiento · Relaciones públicas · Resolución de problemas · Atención al cliente.<p>
-          </div> 
-
-          <div class="col-2 mt-3">
-            <img src="assets/img/latcapital5.jpg" class=" rounded-circle w-50" alt="...">
-          </div>
-            <div class="col-9 mt-5">
-            <p align="left">Cargo: Auxiliar administrativo <br>
-              2008- 2008| Lat Capital de Venezuela, C.A<br>
-              • Encargada del manejo de facturación, cuentas por cobrar, conciliaciones bancarias y pagos institucionales de la empresa.<br>
-              Aptitudes: Asistencia de administración · Aptitudes de organización · Capacidad de análisis</p>
-          </div> 
         </div>  
         </div>
     </div>          

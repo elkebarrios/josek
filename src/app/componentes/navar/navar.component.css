@@ -3,7 +3,7 @@
 background: radial-gradient(circle, rgba(223,143,152,1) 27%, rgba(186,76,84,1) 61%, rgba(74,159,148,0.9335084375547094) 99%);
 }
 /*color de iconos*/
-i.fa-brands.fa-instagram.fa-2xl,i.fa-brands.fa-github.fa-2xl,i.fa-brands.fa-linkedin.fa-2xl,i.fa-solid.fa-user-lock.fa-2xl{
+i.fa-brands{
     color: black;
 }
 /*bordes y fondo iconos transparentes*/

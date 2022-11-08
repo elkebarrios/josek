@@ -1,15 +1,35 @@
-           <!-- Section about me -->
-           <section class="about mt-1">
-            <div class="container text-center ">
-                <div class="row">
-                  <div class="col-3">
-                    <img src="assets/img/IMG_fotoperfilAG.jpg" class="rounded-circle img-fluid perfil w-50 mt-3" alt="Foto perfil">
-                  </div>
-                  <div class="col-9 mt-5">
-                    <h3>Acerca de mi</h3>
-                    <h4 class="mt-5 pt-3">Soy Desarolladora Full Stack Junior, graduada en Administración de Empresas con más de 15 años de experiencia, cuento con amplia trayectoria en la Banca y tesoreria, con un solido conocimiento de servicios y productos bancarios, desempeñándome como oficial de cuentas, tesorera, vendedora, permitiéndome alcanzar el desarrollo y crecimiento de las empresas. Actualmente me desempeño como Desarolladora Full Stack Jr.
-                    </h4>
-                  </div>   
-                </div>
-            </div>          
-           </section>
+<!-- Section Banner -->
+<section class="about mt-1">
+  <div *ngFor="let persona of personas" [ngSwitch]="persona.id">
+    <div *ngSwitchCase="1">
+      <img
+        [src]="persona.banner"
+        alt=""
+        class="img-fluid"
+        style="position: absolute; z-index: -300"
+        width="100%"/>
+      <h3 class="text-white text-center intro">Hola, soy</h3>
+      <h1 class="text-white text-center intro">
+        {{ persona.nombreperfil }}
+      </h1>
+      <h2 class="text-white text-center intro">{{ persona.tituloperfil }}.</h2>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-3">
+            <img
+              [src]="persona.profileImage"
+              class="rounded-circle img-fluid perfil w-50 mt-3"
+              alt="Foto perfil"
+            />
+          </div>
+          <div class="col-9 mt-5">
+            <h3 class="text-white">ACERCA DE MI</h3>
+            <h4 class="mt-5 pt-3" class="text-start text-white">
+              {{ persona.acercaDeMi }}
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
