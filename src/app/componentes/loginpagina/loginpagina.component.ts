@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validator } from '@angular/forms';
 
 @Component({
   selector: 'app-loginpagina',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loginpagina.component.css']
 })
 export class LoginpaginaComponent implements OnInit {
-
-  constructor() { }
+form:FormGroup
+  constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
   }

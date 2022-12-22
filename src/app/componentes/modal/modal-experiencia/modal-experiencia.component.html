@@ -6,6 +6,7 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Experiencia</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form [formGroup]="form" name="experienciaform"> 
         <div class="modal-body">
           <select class="form-select mb-3" aria-label="Default select example">
             <option selected>Nueva Experiencia</option>
@@ -16,40 +17,50 @@
           </select>
           <div class="mb-3">
             <label for="formFile" class="form-label">Seleccionar Logo Empresa</label>
-            <input class="form-control" type="file" id="formFile">
+            <input class="form-control" type="file" id="formFile" formControlName="logoEmpresa">
           </div>
   
           <div class="mb-3">
             <label for="cargo" class="form-label">Cargo</label>
-            <input type="text" class="form-control" id="cargo">
+            <input type="text" class="form-control" id="cargo" formControlName="cargo" [ngClass]="{'is-invalid': Cargo.errors && Cargo.touched, 'is-valid': !Cargo.errors && Cargo.touched}">
+            <div *ngIf="Cargo.errors && Cargo?.touched">    
+              <p *ngIf="Cargo.hasError('required')" class="text-danger">
+                El Cargo es requerido.
+              </p>
           </div>
-  
+        </div>
           <div class="mb-3">
             <label for="empresaRed" class="form-label">Empresa</label>
-            <input type="text" class="form-control" id="empresaRed" placeholder="">
+            <input type="text" class="form-control" id="empresaRed" placeholder="" formControlName="nombreEmpresa" [ngClass]="{'is-invalid': NombreEmpresa.errors && NombreEmpresa.touched, 'is-valid': !NombreEmpresa.errors && NombreEmpresa.touched}">
+            <div *ngIf="NombreEmpresa.errors && NombreEmpresa.touched">    
+              <p *ngIf="NombreEmpresa.hasError('required')" class="text-danger">
+                El Titulo Obtenido es requerido.
+              </p>
           </div>
-  
+        </div>
           <div class="mb-3">
             <label for="fechaInicio" class="form-label">Fecha Inicio</label>
-            <input type="date" class="form-control" id="fechaInicio" placeholder="">
+            <input type="date" class="form-control" id="fechaInicio" placeholder="" formControlName="fechaInicio">
           </div>
           <div class="mb-3">
             <label for="fechaFin" class="form-label">Fecha Fin</label>
-            <input type="date" class="form-control" id="fechaFin" placeholder="">
+            <input type="date" class="form-control" id="fechaFin" placeholder="" formControlName="fechaFin">
           </div>
           <div class="mb-3">
             <label for="descripción" class="form-label">Descripción</label>
-            <textarea class="form-control" id="descripción" placeholder="inserte tarea"></textarea>
+            <textarea class="form-control" id="descripción" placeholder="inserte tarea"formControlName="descripcionCargo" [ngClass]="{'is-invalid': DescripcionCargo.errors && DescripcionCargo.touched, 'is-valid': !DescripcionCargo.errors && DescripcionCargo.touched}"></textarea>
+              <div *ngIf="DescripcionCargo.errors && DescripcionCargo.touched">    
+                <p *ngIf="DescripcionCargo.hasError('required')" class="text-danger">
+                  La Descripcion del Cargo es requerida.
+                </p>
           </div>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Es Trabajo Actual</label>
-          </div>
+        </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary">Guardar</button>
           <button type="button" class="btn btn-danger">Borrar</button>
         </div>
+      </form>
       </div>
     </div>
   </div>

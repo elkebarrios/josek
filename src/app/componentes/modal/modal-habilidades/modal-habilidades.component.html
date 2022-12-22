@@ -6,23 +6,40 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Habilidades</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
+        <form [formGroup]="form" name="hardform"> 
+
         <div class="modal-body">
-          <select class="form-select mb-3" aria-label="Default select example">
+          <select class="form-select mb-3" aria-label="Default select example" formControlName="habilidad" [ngClass]="{'is-invalid': Habilidad.errors && Habilidad.touched, 'is-valid': !Habilidad.errors && Habilidad.touched}">
             <option selected>Nueva Habilidad</option>
-            <option value="1">Instagram</option>
-            <option value="2">Git Hub</option>
-            <option value="3">Linkedin</option>
-          </select>
+            <option value="1">HTML</option>
+            <option value="2">CSS</option>
+            <option value="3">Manejo del tiempo</option>
+            <option value="4">Paquete Office</option>
+            <option value="5">Flexibilidad yy adaptacion</option>
+            <option value="6">Atención al cliente</option>
+            </select>
+            <div *ngIf="Habilidad.errors && Habilidad.touched">    
+            <p *ngIf="Habilidad.hasError('required')" class="text-danger">
+              La Habilidad es requerida.
+            </p>
+          </div> 
   
           <div class="mb-3">
             <label for="progreso" class="form-label">% Progreso</label>
-            <input type="number" min="0" max="100" id="habilidadPorcentaje">
+            <input type="number" min="0" max="100" id="habilidadPorcentaje" formControlName="porcentaje" [ngClass]="{'is-invalid': Porcentaje.errors && Porcentaje.touched, 'is-valid': !Porcentaje.errors && Porcentaje.touched}">
+            <div *ngIf="Porcentaje.errors && Porcentaje.touched">    
+              <p *ngIf="Porcentaje.hasError('required')" class="text-danger">
+                El Porcentaje es requerido.
+              </p>
           </div>
+        </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary">Guardar</button>
           <button type="button" class="btn btn-danger">Borrar</button>
         </div>
+      </form>
       </div>
     </div>
   </div>

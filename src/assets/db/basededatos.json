@@ -2,7 +2,7 @@
     "personas":[
         {
         "id": 1,
-        "banner": "assets/img/saltoangel.jpg",
+        "imagen": "assets/img/saltoangel.jpg",
         "profileImage": "assets/img/img_fotoperfilag.jpg",
         "nombreperfil": "Elke Barrios Villamizar",
         "tituloperfil": "Desarrolladora Full Stack",
@@ -16,8 +16,8 @@
             "logoEmpresa": "assets/img/maxlimp.png",
             "cargo": "Vendedora Preventista",
             "empleoActual": "Si",
-            "FechaInicio": "01-09-2020",
-            "FechaFin": "",
+            "fechaInicio": "01-09-2020",
+            "fechaFin": "",
             "nombreEmpresa": "Distribuidora Maxlimp",
             "descripcionCargo": "Enfocada en el mantenimiento de los clientes actuales y en busca de nuevos clientes. Organización de agenda para las visitas semanales. Atención a clientes.", 
             "aptitud": "Aptitudes: Fidelización de clientes. Confidencialidad. Atención al cliente. Facilidad de adaptación. Servicio de atención al cliente."
@@ -28,8 +28,8 @@
             "logoEmpresa": "assets/img/ferralca1.jpg",
             "cargo": "Tesorera",
             "empleoActual":"No",
-            "FechaInicio": "01-11-2017",
-            "FechaFin": "01-12-2018",
+            "fechaInicio": "01-11-2017",
+            "fechaFin": "01-12-2018",
             "nombreEmpresa": "Ferro Aluminio, FERRALCA",
             "descripcionCargo": "Encargada del manejo de facturación, cuentas por pagar, cuentas bancarias de la empresa. Conciliación bancarias, solicitud de cotizaciones a proveedores. Control de las exportaciones de la empresa, control del flujo de caja.",
             "aptitud": "Aptitudes: Presentaciones. Exportaciones. Rendición de cuentas. Administración logística. Administración. Capacidad de análisis. Control interno. Gestión de proyectos. Gestión de cuentas."
@@ -41,10 +41,10 @@
             "logoEmpresa": "assets/img/banesco5.png",
             "cargo": "Oficial de Cuentas",
             "empleoActual":"No",
-            "FechaInicio": "15-12-2008",
-            "FechaFin": "15-09-2018",
+            "fechaInicio": "15-12-2008",
+            "fechaFin": "15-09-2018",
             "nombreEmpresa": "Banesco, Banco Universal",
-            "descripcionCargo":  "Seguimiento integral a los clientes asignados, buscando su desarrollo y crecimiento en el Banco ofreciendo servicios y productos financieros. Desarrollar acciones de mejoras, dar acompañamiento administrativo, brindando seguimiento ante reclamos y requerimientos.",
+            "descripcionCargo":  "Seguimiento integral a clientes asignados, buscando su desarrollo y crecimiento en el Banco ofreciendo servicios y productos financieros. Desarrollar acciones de mejoras, brindar seguimiento ante reclamos y requerimientos.",
             "aptitud": "Aptitudes: Presentaciones. Fidelización de clientes. Gestión de relaciones con clientes (CRM). Seguimiento. Relaciones públicas. Resolución de problemas. Atención al cliente."
         },
 
@@ -53,8 +53,8 @@
             "logoEmpresa": "assets/img/latcapital5.jpg",
             "cargo": "Asistente Administrativo",
             "empleoActual":"No",
-            "FechaInicio": "15-02-2008",
-            "FechaFin": "15-09-2008",
+            "fechaInicio": "15-02-2008",
+            "fechaFin": "15-09-2008",
             "nombreEmpresa": "Lat Capital de Venezuela, C.A",
             "descripcionCargo": "Encargada del manejo de facturación, cuentas por cobrar, conciliaciones bancarias y pagos institucionales de la empresa.", 
             "aptitud": "Aptitudes: Asistencia de administración · Aptitudes de organización. Capacidad de análisis"
@@ -67,21 +67,21 @@
         "logoInstitucion": "assets/img/fondo-gris.webp",
         "nombreInstitucion": "Ministerio de Desarrollo Productivo",
         "tituloObtenido": "Desarollador Full Stack Junior",
-        "anoFin": "2023"
+        "fechaFin": "2023"
     },
     {
         "id": 2,
         "logoInstitucion": "assets/img/fondo-gris.webp",
         "nombreInstitucion": "Universidad Santa Maria",
         "tituloObtenido": "Licenciada en Administración",
-        "anoFin": "2007"
+        "fechaFin": "2007-01-01"
     },
     {
         "id": 3,
         "logoInstitucion": "assets/img/fondo-gris.webp",
         "nombreInstitucion": "Instituto ISER",
         "tituloObtenido": "Actriz",
-        "anoFin": "en curso"
+        "fechaFin": "en curso"
     },
 
     {
@@ -89,7 +89,7 @@
         "logoInstitucion": "assets/img/fondo-gris.webp",
         "nombreInstitucion": "Open English",
         "tituloObtenido": "English Basic Proficienty",
-        "anoFin": "En curso"
+        "fechaFin": "En curso"
     }
 ],
 

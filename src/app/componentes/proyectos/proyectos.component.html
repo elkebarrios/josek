@@ -12,11 +12,11 @@
           <br />
           <ul
             class="proyectos list-group list-group-horizontal"
-            *ngFor="let imagen of proyecto.imagenes"
+            
           >
             <div class="img-container">
               <li class="list-group-item">
-                <img [src]="imagen" class="rounded float" alt="foto" />
+                <img [src]="proyecto.imagenes" class="rounded float" alt="foto" />
               </li>
             </div>
           </ul>

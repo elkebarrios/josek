@@ -11,7 +11,8 @@ const routes: Routes = [
   {path: 'login', component:LoginpaginaComponent},
   {path: 'dashboard', component:DashboardComponent},
   {path: 'registro', component:RegistroComponent},
-  {path: '**', component:Error404Component}
+  {path: '**', component:Error404Component},
+  {path: '',redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @NgModule({

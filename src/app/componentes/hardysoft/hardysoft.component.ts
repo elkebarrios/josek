@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from 'src/app/servicios/datos.service';
+import { Hard } from 'src/app/modelos/hard';
+import { HardService } from 'src/app/servicios/hard.service';
+
 
 @Component({
   selector: 'app-hardysoft',
@@ -7,12 +9,12 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./hardysoft.component.css']
 })
 export class HardysoftComponent implements OnInit {
-  hardSkills:any;
-  constructor(private datos: DatosService) { }
+  hardSkills:Hard[]=[];
+  constructor(private datos: HardService) { }
 
   ngOnInit(): void {
-    this.datos.getDatos().subscribe(info => {
-      this.hardSkills = info.hardSkills;
+    this.datos.verHards().subscribe(info => {
+      this.hardSkills = info;
       }
   
       )

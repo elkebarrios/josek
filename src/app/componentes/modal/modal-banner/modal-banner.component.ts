@@ -7,7 +7,9 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./modal-banner.component.css']
 })
 export class ModalBannerComponent implements OnInit {
+
   modalesbanner:any;
+  
   constructor(private datos: DatosService) { }
 
   ngOnInit(): void {

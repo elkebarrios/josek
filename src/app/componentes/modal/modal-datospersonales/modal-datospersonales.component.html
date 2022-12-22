@@ -1,4 +1,11 @@
 <!-- Modal datos personales -->
+<div
+  class="modal fade"
+  id="bannerModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
 <div class="modal fade" id="datosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -9,12 +16,23 @@
         <div class="modal-body">
           <div class="mb-3">
             <label for="formFile" class="form-label">Seleccionar Foto Perfil</label>
-            <input class="form-control" type="file" id="formFile">
+            <input class="form-control" type="file" id="formFile" formControlName="fotoPerfil*">
           </div>
           
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Seleccionar Foto Banner</label>
+              <input class="form-control" type="file" id="formFile" formControlName="fotoImage*">
+            </div>
+
           <div class="mb-3">
             <label for="acercademi" class="form-label">Acerca de mi</label>
-            <textarea class="form-control" id="acercademi" placeholder="agregar breve descripción de usted"></textarea>
+            <textarea class="form-control" id="acercademi" placeholder="agregar breve descripción de usted" formControlName="a
+            cercaDeMi" [ngClass]="{'is-invalid': AcercaDeMi?.errors && AcercaDeMi?.touched, 'is-valid': !AcercaDeMi?.errors && AcercaDeMi?.touched}">
+              <div *ngIf="AcercaDeMi?.errors && AcercaDeMi?.touched">    
+                <p *ngIf="AcercaDeMi?.hasError('required')" class="text-danger">
+                  Acerca de mi es requerido.
+                </p>></textarea>
           </div>
       </div>
         <div class="modal-footer">

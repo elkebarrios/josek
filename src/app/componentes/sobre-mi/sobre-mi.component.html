@@ -1,7 +1,5 @@
 <!-- Section Banner -->
 <section class="about mt-1">
-  <div *ngFor="let persona of personas" [ngSwitch]="persona.id">
-    <div *ngSwitchCase="1">
       <img
         [src]="persona.banner"
         alt=""
@@ -18,7 +16,7 @@
         <div class="row">
           <div class="col-3">
             <img
-              [src]="persona.profileImage"
+              [src]="persona.imagen"
               class="rounded-circle img-fluid perfil w-50 mt-3"
               alt="Foto perfil"
             />
@@ -31,6 +29,4 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 </section>

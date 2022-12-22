@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatosService } from 'src/app/servicios/datos.service';
 
 @Component({
@@ -7,8 +8,20 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./modal-datospersonales.component.css']
 })
 export class ModalDatospersonalesComponent implements OnInit {
+  form: FormGroup;
   modales:any;
-  constructor(private datos: DatosService) { }
+  imagen: string ='';
+    nombreperfil: string ='';
+    tituloperfil: string ='';
+    acercaDeMi: string ='';
+    constructor(private datos: DatosService, private formBuilder: FormBuilder ) {
+      this.form=this.formBuilder.group({
+        nombreperfil:['',],
+        tituloperfil:['',],
+        acercaDeMi:['',[Validators.required]],
+        imagen:[''],
+           }) 
+     }
 
   ngOnInit(): void {
     this.datos.getDatos().subscribe(info => {
@@ -16,5 +29,20 @@ export class ModalDatospersonalesComponent implements OnInit {
       }
     )
   }
+  get AcercaDeMi(){
+    return this.form.get("acercaDeMi");
+  }
 
+  //get TituloObtenido(){
+    //return this.form.get("tituloObtenido");
+  //}
+ 
+
+  get AcercaDeMiValid(){
+    return this.AcercaDeMi?.touched && !this.AcercaDeMi?.valid;
+  }
+
+  /*get TituloObtenidoValid() {
+    return this.TituloObtenido?.touched && !this.TituloObtenido?.valid;
+  } */
 }
