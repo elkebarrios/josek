@@ -1,11 +1,7 @@
 <!-- Modal datos personales -->
-<div
-  class="modal fade"
-  id="bannerModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
+<!--<div
+  class="modal fade" id="bannerModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">-->
 <div class="modal fade" id="datosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -13,7 +9,28 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Personales</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form [formGroup]="form" name="datospersonalesform"> 
         <div class="modal-body">
+          <ul class="p-0">
+            <li *ngFor="let persona of Personas " class="d-flex justify-content-between align-items-center m-1">
+              <span>{{persona.id}} - {{persona.nombreperfil}}</span>
+              <span class="d-flex justify-content-between gap-2">
+                <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0" (click)="borrar(persona.id)">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(persona.id)">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+              </span>
+            </li>
+          </ul>
+          <div class="input-group mb-3 bg-light" *ngIf="!!form.value.id">
+            <div class="input-group-prepend border-0">
+              <span class="input-group-text border-0" id="basic-addon1">NOMBREPERFIL:</span>
+            </div>
+            <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="nombreperfil">
+          </div>
+         
           <div class="mb-3">
             <label for="formFile" class="form-label">Seleccionar Foto Perfil</label>
             <input class="form-control" type="file" id="formFile" formControlName="fotoPerfil*">
@@ -25,22 +42,44 @@
               <input class="form-control" type="file" id="formFile" formControlName="fotoImage*">
             </div>
 
+            <div class="mb-3">
+              <label for="nombreperfil" class="form-label">Nombre de Perfil</label>
+              <input type="text" class="form-control" id="nombreperfil" formControlName="nombreperfil" [ngClass]="{'is-invalid': Nombreperfil?.errors && Nombreperfil?.touched, 'is-valid': !Nombreperfil?.errors && Nombreperfil?.touched}">
+                <div *ngIf="Nombreperfil?.errors && Nombreperfil?.touched">    
+                  <p *ngIf="Nombreperfil?.hasError('required')" class="text-danger">
+                    El Nombre de Perfil es requerido.
+                  </p>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="tituloperfil" class="form-label">Titulo del Perfil</label>
+          <input type="text" class="form-control" id="tituloperfil" formControlName="tituloperfil" [ngClass]="{'is-invalid': Tituloperfil?.errors && Tituloperfil?.touched, 'is-valid': !Tituloperfil?.errors && Tituloperfil?.touched}">
+            <div *ngIf="Tituloperfil?.errors && Tituloperfil?.touched">    
+              <p *ngIf="Tituloperfil?.hasError('required')" class="text-danger">
+                El Titulo del perfil es requerido.
+              </p>
+        </div>
+    </div>
+
           <div class="mb-3">
             <label for="acercademi" class="form-label">Acerca de mi</label>
-            <textarea class="form-control" id="acercademi" placeholder="agregar breve descripción de usted" formControlName="a
-            cercaDeMi" [ngClass]="{'is-invalid': AcercaDeMi?.errors && AcercaDeMi?.touched, 'is-valid': !AcercaDeMi?.errors && AcercaDeMi?.touched}">
+            <textarea class="form-control" id="acercademi" placeholder="agregar breve descripción de usted" formControlName="acercaDeMi" [ngClass]="{'is-invalid': AcercaDeMi?.errors && AcercaDeMi?.touched, 'is-valid': !AcercaDeMi?.errors && AcercaDeMi?.touched}"></textarea>
               <div *ngIf="AcercaDeMi?.errors && AcercaDeMi?.touched">    
                 <p *ngIf="AcercaDeMi?.hasError('required')" class="text-danger">
                   Acerca de mi es requerido.
-                </p>></textarea>
+                </p>
           </div>
       </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Guardar</button>
-          <button type="button" class="btn btn-danger">Borrar</button>
-        </div>
+    </div>
+  
+</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="form.reset()">Reset</button>
+        <button class="btn btn-primary" (click)="guardar()"  [disabled]="form.invalid">Guardar</button>
+      </div>
+      </form>
     </div>
   </div>
-  </div>
-  
+</div>
   

@@ -12,12 +12,7 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 export class ModalEstudiosComponent implements OnInit {
   form: FormGroup;
   educaciones: Educacion[]=[];
-  tipoeducacion:string="";
-  edu:Educacion|any=null;
-  logoInstitucion: string="";
-  nombreInstitucion: string="";
-  tituloObtenido: string="";
-  fechaFin: string="";
+  
   constructor(private datos: DatosService, private formBuilder: FormBuilder, private EducacionS: EducacionService) {
     //Creamos el grupo de controles para el formulario 
     this.form=this.formBuilder.group({
@@ -32,50 +27,69 @@ export class ModalEstudiosComponent implements OnInit {
     this.cargarEducacion();
   }
   get NombreInstitucion(){
-    return this.form.get("nombre_institucion");
+    return this.form.get("nombreInstitucion");
   }
 
   get TituloObtenido(){
-    return this.form.get("titulo_obtenido");
+    return this.form.get("tituloObtenido");
   }
+
   cargarEducacion():void{
-    this.EducacionS.verEducaciones().subscribe(info => {
-      this.educaciones = info;
+    this.EducacionS.verEducaciones().subscribe(
+      data => {
+      this.educaciones = data;
   }
   )
   }
-  capturar() {
-    this.tipoeducacion=this.form.get('tipoeducacion').value;
-     
-    }
+  
     cargarDetalle(id?:number){
-      if(id != undefined){
-      this.EducacionS.verEducacion(id).subscribe(data=>{
-        this.edu=data;
-      },err=>{
-        alert("error al modificar");
-      })
+      this.EducacionS.verEducacion(id).subscribe(
+        {
+         next : (data) => {
+            this.form.setValue(data);
+          },
+          error: (e) => {
+            console.error(e)
+            alert("error al modificar")
+          },
+          complete: () => console.info('complete')
+        }
+      )
+  }
+  guardar() {
+    let est = this.form.value;
+
+    if (est.id == '') {
+      this.EducacionS.agregarEducacion(est).subscribe(
+        data => {
+          alert("Educación añadida");
+          this.cargarEducacion();
+          this.form.reset();
+        }
+      )
+    } else {
+      this.EducacionS.updateEducacion(est).subscribe(
+        data => {
+          alert("Educación modificada");
+          this.cargarEducacion();
+          this.form.reset();
+        }
+      )
     }
   }
-  OnCreate():void{
-    
-     const expe= new Educacion(this.nombreInstitucion,this.logoInstitucion,this.tituloObtenido,this.fechaFin)
-     this.EducacionS.agregarEducacion(expe).subscribe(data=>{
-       alert("Educación añadida");
-       this.cargarEducacion();
-     },err=>{
-       alert("Fallo");
-     })
-     
-   }
-   borrar(id?:number){
-    if(id != undefined){
-      this.EducacionS.eliminarEducacion(id).subscribe(data =>{
-        this.cargarEducacion();
-        alert("se pudo eliminar satisfactoriamente");
-      },err =>{
-        alert("No se pudo eliminar");
-      })
-    }
+
+  borrar(id?: number) {
+    this.EducacionS.eliminarEducacion(id).subscribe(
+      {
+        next: data => {
+          alert("se pudo eliminar satisfactoriamente");
+          this.cargarEducacion()
+        },
+        error: err => {
+          console.error(err)
+          alert("No se pudo eliminar")
+        }
+      }
+    )
   }
 }

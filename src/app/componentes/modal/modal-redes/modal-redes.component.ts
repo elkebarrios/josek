@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatosService } from 'src/app/servicios/datos.service';
+
 
 @Component({
   selector: 'app-modal-redes',
@@ -7,14 +9,23 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./modal-redes.component.css']
 })
 export class ModalRedesComponent implements OnInit {
-  modales:any;
-  constructor(private datos: DatosService) { }
-
-  ngOnInit(): void {
-    this.datos.getDatos().subscribe(info => {
-      this.modales = info.modales;
-      }
-    )
+  form: FormGroup;
+  constructor(private datos: DatosService, private formBuilder: FormBuilder) { 
+    this.form=this.formBuilder.group({
+      link:['',[Validators.required]],
+      icono:['',[Validators.required]],
+         })  
   }
 
+  ngOnInit(): void {
+  }
+  get Link(){
+    
+    return this.form.get("link");
+  }
+
+  get Icono(){
+    return this.form.get("icono");
+  }
+ 
 }
