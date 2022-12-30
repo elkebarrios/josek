@@ -24,16 +24,17 @@
               </span>
             </li>
           </ul>
+          <h5 class="form text-center mb-3">Estudio</h5>
           <div class="input-group mb-3 bg-light" *ngIf="!!form.value.id">
             <div class="input-group-prepend border-0">
-              <span class="input-group-text border-0" id="basic-addon1">NOMBREPERFIL:</span>
+              <span class="input-group-text border-0" id="basic-addon1">ID:</span>
             </div>
-            <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="nombreperfil">
+            <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
           </div>
          
           <div class="mb-3">
-            <label for="formFile" class="form-label">Seleccionar Foto Perfil</label>
-            <input class="form-control" type="file" id="formFile" formControlName="fotoPerfil*">
+            <label for="imagen" class="form-label">Seleccionar Foto Perfil</label>
+            <input class="form-control" type="file" id="imagen" formControlName="imagen">
           </div>
           
           <div class="modal-body">
@@ -44,36 +45,38 @@
 
             <div class="mb-3">
               <label for="nombreperfil" class="form-label">Nombre de Perfil</label>
-              <input type="text" class="form-control" id="nombreperfil" formControlName="nombreperfil" [ngClass]="{'is-invalid': Nombreperfil?.errors && Nombreperfil?.touched, 'is-valid': !Nombreperfil?.errors && Nombreperfil?.touched}">
-                <div *ngIf="Nombreperfil?.errors && Nombreperfil?.touched">    
-                  <p *ngIf="Nombreperfil?.hasError('required')" class="text-danger">
-                    El Nombre de Perfil es requerido.
-                  </p>
+              <input type="text" class="form-control" id="nombreperfil" formControlName="nombreperfil" [ngClass]="{'is-invalid': form.get('nombreperfil')?.errors && form.get('nombreperfil')?.touched, 'is-valid': form.get('nombreperfil')?.errors && form.get('nombreperfil')?.touched}"> 
+                  <p class="text-danger"
+            *ngIf="form.get('nombreperfil')?.touched && form.get('nombreperfil')?.errors?.['required']">
+            El nombre de la institución es requerido.
+          </p>
             </div>
-        </div>
+        
+      
         
         <div class="mb-3">
           <label for="tituloperfil" class="form-label">Titulo del Perfil</label>
-          <input type="text" class="form-control" id="tituloperfil" formControlName="tituloperfil" [ngClass]="{'is-invalid': Tituloperfil?.errors && Tituloperfil?.touched, 'is-valid': !Tituloperfil?.errors && Tituloperfil?.touched}">
-            <div *ngIf="Tituloperfil?.errors && Tituloperfil?.touched">    
-              <p *ngIf="Tituloperfil?.hasError('required')" class="text-danger">
-                El Titulo del perfil es requerido.
-              </p>
+          <input type="text" class="form-control" id="tituloperfil" formControlName="tituloperfil" [ngClass]="{'is-invalid': form.get('nombreperfil')?.errors && form.get('tituloperfil')?.touched, 'is-valid': form.get('tituloperfil')?.errors && form.get('tituloperfil')?.touched}">
+          <!-- [ngClass]="{'is-invalid': Tituloperfil?.errors && Tituloperfil?.touched, 'is-valid': !Tituloperfil?.errors && Tituloperfil?.touched}">
+            <div *ngIf="Tituloperfil?.errors && Tituloperfil?.touched"-->    
+              <p class="text-danger"
+            *ngIf="form.get('tituloperfil')?.touched && form.get('tituloperfil')?.errors?.['required']">
+            El nombre de la institución es requerido.
+          </p>
         </div>
-    </div>
+    
 
           <div class="mb-3">
             <label for="acercademi" class="form-label">Acerca de mi</label>
-            <textarea class="form-control" id="acercademi" placeholder="agregar breve descripción de usted" formControlName="acercaDeMi" [ngClass]="{'is-invalid': AcercaDeMi?.errors && AcercaDeMi?.touched, 'is-valid': !AcercaDeMi?.errors && AcercaDeMi?.touched}"></textarea>
-              <div *ngIf="AcercaDeMi?.errors && AcercaDeMi?.touched">    
-                <p *ngIf="AcercaDeMi?.hasError('required')" class="text-danger">
-                  Acerca de mi es requerido.
-                </p>
+            <textarea class="form-control" id="acercademi" placeholder="agregar breve descripción de usted" formControlName="acercaDeMi" [ngClass]="{'is-invalid': form.get('acercaDeMi')?.errors && form.get('acercaDeMi')?.touched, 'is-valid': form.get('acercaDeMi')?.errors && form.get('acercaDeMi')?.touched}"></textarea> 
+            <!--[ngClass]="{'is-invalid': AcercaDeMi?.errors && AcercaDeMi?.touched, 'is-valid': !AcercaDeMi?.errors && AcercaDeMi?.touched}"></textarea>-->
+            <p class="text-danger"
+            *ngIf="form.get('acercaDeMi')?.touched && form.get('acercaDeMi')?.errors?.['required']">
+            Acerca de mi es requerido.
+          </p>
           </div>
-      </div>
     </div>
-  
-</div>
+  </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" (click)="form.reset()">Reset</button>
         <button class="btn btn-primary" (click)="guardar()"  [disabled]="form.invalid">Guardar</button>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Persona } from 'src/app/modelos/persona';
-import { DatosService } from 'src/app/servicios/datos.service';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
 
@@ -14,7 +13,7 @@ export class ModalDatospersonalesComponent implements OnInit {
   form: FormGroup;
   Personas: Persona[]=[];
 
-    constructor(private datos: DatosService, private formBuilder: FormBuilder, private PersonaS: PersonaService ) {
+    constructor(private formBuilder: FormBuilder, private PersonaS: PersonaService ) {
       this.form=this.formBuilder.group({
         nombreperfil:['', [Validators.required]],
         tituloperfil:['',[Validators.required]],
@@ -26,16 +25,16 @@ export class ModalDatospersonalesComponent implements OnInit {
   ngOnInit(): void {
     this.cargarPersona();
   }
-  get Nombreperfil(){
-    return this.form.get("nombreperfil");
-  }
+  //get Nombreperfil(){
+  //  return this.form.get("nombreperfil");
+  //}
 
-  get Tituloperfil(){
-    return this.form.get("tituloperfil");
-  }
-  get AcercaDeMi(){
-    return this.form.get("acercaDeMi");
-  }
+  //get Tituloperfil(){
+  //  return this.form.get("tituloperfil");
+  //}
+  //get AcercaDeMi(){
+  //  return this.form.get("acercaDeMi");
+  //}
 
   cargarPersona():void{
     this.PersonaS.verPersonas().subscribe(
@@ -59,13 +58,22 @@ export class ModalDatospersonalesComponent implements OnInit {
         }
       )
   }
+
+  //👇 esto es solo para hacer pruebas en local
+  onImagenSeleccionada(e: any) {
+    let nombreImagen = e.target.files[0].name
+    let url = 'assets/img/' + nombreImagen;
+    this.form.patchValue({ logoInstitucion: url });
+    console.log(url);
+  }
+
   guardar() {
     let est = this.form.value;
 
     if (est.id == '') {
       this.PersonaS.agregarPersona(est).subscribe(
         data => {
-          alert("Educación añadida");
+          alert("Persona añadida");
           this.cargarPersona();
           this.form.reset();
         }

@@ -7,60 +7,78 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form [formGroup]="form" name="experienciaform"> 
-        <div class="modal-body">
-          <select class="form-select mb-3" aria-label="Default select example">
-            <option selected>Nueva Experiencia</option>
-            <option value="1">Vendedora Preventista</option>
-            <option value="2">Tesorera</option>
-            <option value="3">Oficial de Cuentas</option>
-            <option value="3">Auxiliar administrativo</option>
-          </select>
-          <div class="mb-3">
-            <label for="formFile" class="form-label">Seleccionar Logo Empresa</label>
-            <input class="form-control" type="file" id="formFile" formControlName="logoEmpresa">
-          </div>
+          <div class="modal-body">
+            <ul class="p-0">
+              <li *ngFor="let experiencia of experiencias" class="d-flex justify-content-between align-items-center m-1">
+                <span>{{experiencia.id}} - {{experiencia.nombreEmpresa}}</span>
+                <span class="d-flex justify-content-between gap-2">
+                  <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0" (click)="borrar(experiencia.id)">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(experiencia.id)">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                </span>
+              </li>
+            </ul>
   
-          <div class="mb-3">
-            <label for="cargo" class="form-label">Cargo</label>
-            <input type="text" class="form-control" id="cargo" formControlName="cargo" [ngClass]="{'is-invalid': Cargo.errors && Cargo.touched, 'is-valid': !Cargo.errors && Cargo.touched}">
-            <div *ngIf="Cargo.errors && Cargo?.touched">    
-              <p *ngIf="Cargo.hasError('required')" class="text-danger">
-                El Cargo es requerido.
+            <div class="input-group mb-3 bg-light" *ngIf="!!form.value.id">
+              <div class="input-group-prepend border-0">
+                <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              </div>
+              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+            </div>
+  
+            <div class="mb-3">
+              <label for="nombreInstitucion" class="form-label">Cargo</label>
+              <input type="text" class="form-control" id="cargo" formControlName="cargo">
+              <p class="text-danger"
+                *ngIf="form.get('cargo')?.touched && form.get('cargo')?.errors?.['required']">
+                El cargo es requerido.
               </p>
-          </div>
-        </div>
-          <div class="mb-3">
-            <label for="empresaRed" class="form-label">Empresa</label>
-            <input type="text" class="form-control" id="empresaRed" placeholder="" formControlName="nombreEmpresa" [ngClass]="{'is-invalid': NombreEmpresa.errors && NombreEmpresa.touched, 'is-valid': !NombreEmpresa.errors && NombreEmpresa.touched}">
-            <div *ngIf="NombreEmpresa.errors && NombreEmpresa.touched">    
-              <p *ngIf="NombreEmpresa.hasError('required')" class="text-danger">
-                El Titulo Obtenido es requerido.
+            </div>
+  
+            <div class="input-group mb-3">
+              <label for="logoInstitucion" class="form-label">Seleccionar el logo de la Institución</label>
+              <input hidden type="file" (change)="onImagenSeleccionada($event)" #hiddenfileinput>
+  
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button (click)="hiddenfileinput.click()" class="btn btn-outline-secondary" type="button">
+                    <i class="fa-solid fa-file-import"></i>
+                  </button>
+                </div>
+                <input class="form-control" type="text" id="logoInstitucion" formControlName="logoInstitucion" placeholder="assets/img/ejemplo.webp">
+              </div>
+              <p class="text-danger"
+                *ngIf="form.get('logoInstitucion')?.touched && form.get('logoInstitucion').errors?.['required']">
+                La imagen es requerida.
               </p>
+            </div>
+  
+            <div class="mb-3">
+              <label for="titulo" class="form-label">Nombre Empresa</label>
+              <input type="text" class="form-control" id="titulo" formControlName="nombreEmpresa">
+              <p class="text-danger"
+                *ngIf="form.get('nombreEmpresa')?.touched && form.get('nombreEmpresa')?.errors?.['required']">
+                El Nombre de la Empresa es requerido.
+              </p>
+            </div>
+  
+            <div class="mb-3">
+              <label for="fechaFin" class="form-label">Fecha de Finalización</label>
+              <input type="date" class="form-control" id="fechaFin" placeholder="" formControlName="fechaFin">
+              <p class="text-danger"
+                *ngIf="form.get('fechaFin')?.touched && form.get('fechaFin')?.errors?.['required']">
+                La fecha de finalización es requerida.
+              </p>
+            </div>
           </div>
-        </div>
-          <div class="mb-3">
-            <label for="fechaInicio" class="form-label">Fecha Inicio</label>
-            <input type="date" class="form-control" id="fechaInicio" placeholder="" formControlName="fechaInicio">
+          <div class="modal-footer">
+            <button class="btn btn-secondary" (click)="form.reset()">Reset</button>
+            <button class="btn btn-primary" (click)="guardar()"  [disabled]="form.invalid">Guardar</button>
           </div>
-          <div class="mb-3">
-            <label for="fechaFin" class="form-label">Fecha Fin</label>
-            <input type="date" class="form-control" id="fechaFin" placeholder="" formControlName="fechaFin">
-          </div>
-          <div class="mb-3">
-            <label for="descripción" class="form-label">Descripción</label>
-            <textarea class="form-control" id="descripción" placeholder="inserte tarea"formControlName="descripcionCargo" [ngClass]="{'is-invalid': DescripcionCargo.errors && DescripcionCargo.touched, 'is-valid': !DescripcionCargo.errors && DescripcionCargo.touched}"></textarea>
-              <div *ngIf="DescripcionCargo.errors && DescripcionCargo.touched">    
-                <p *ngIf="DescripcionCargo.hasError('required')" class="text-danger">
-                  La Descripcion del Cargo es requerida.
-                </p>
-          </div>
-        </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Guardar</button>
-          <button type="button" class="btn btn-danger">Borrar</button>
-        </div>
-      </form>
+        </form>
       </div>
     </div>
   </div>
