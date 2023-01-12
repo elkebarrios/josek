@@ -24,7 +24,6 @@
               </span>
             </li>
           </ul>
-          <h5 class="form text-center mb-3">Estudio</h5>
           <div class="input-group mb-3 bg-light" *ngIf="!!form.value.id">
             <div class="input-group-prepend border-0">
               <span class="input-group-text border-0" id="basic-addon1">ID:</span>
@@ -34,15 +33,39 @@
          
           <div class="mb-3">
             <label for="imagen" class="form-label">Seleccionar Foto Perfil</label>
-            <input class="form-control" type="file" id="imagen" formControlName="imagen">
+            <input hidden type="file" (change)="onImagenSeleccionada($event)" #hiddenfileinput>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <button (click)="hiddenfileinput.click()" class="btn btn-outline-secondary" type="button">
+                  <i class="fa-solid fa-file-import"></i>
+                </button>
+              </div>
+              <input class="form-control" type="text" id="imagen" formControlName="imagen" placeholder="assets/img/ejemplo.webp">
+            </div>
+            <p class="text-danger"
+              *ngIf="form.get('imagen')?.touched && form.get('imagen').errors?.['required']">
+              La imagen es requerida.
+            </p>
           </div>
           
           <div class="modal-body">
             <div class="mb-3">
-              <label for="formFile" class="form-label">Seleccionar Foto Banner</label>
-              <input class="form-control" type="file" id="formFile" formControlName="fotoImage*">
+              <label for="banner" class="form-label">Seleccionar Foto Banner</label>
+              <input hidden type="file" (change)="onImagenSeleccionada($event)" #hiddenfileinput>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button (click)="hiddenfileinput.click()" class="btn btn-outline-secondary" type="button">
+                    <i class="fa-solid fa-file-import"></i>
+                  </button>
+                </div>
+                <input class="form-control" type="text" id="banner" formControlName="banner" placeholder="assets/img/ejemplo.webp">
+              </div>
+              <p class="text-danger"
+                *ngIf="form.get('banner')?.touched && form.get('banner').errors?.['required']">
+                La imagen es requerida.
+              </p>
             </div>
-
+            
             <div class="mb-3">
               <label for="nombreperfil" class="form-label">Nombre de Perfil</label>
               <input type="text" class="form-control" id="nombreperfil" formControlName="nombreperfil" [ngClass]="{'is-invalid': form.get('nombreperfil')?.errors && form.get('nombreperfil')?.touched, 'is-valid': form.get('nombreperfil')?.errors && form.get('nombreperfil')?.touched}"> 

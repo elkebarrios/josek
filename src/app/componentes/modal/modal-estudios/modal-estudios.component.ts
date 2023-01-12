@@ -140,7 +140,7 @@ export class ModalEstudiosComponent implements OnInit {
     )
   }
 
-  cargarDetalle(id?: number) {
+  cargarDetalle(id: number) {
     this.EducacionS.verEducacion(id).subscribe(
       {
         next: (data) => {
@@ -185,7 +185,7 @@ export class ModalEstudiosComponent implements OnInit {
     }
   }
 
-  borrar(id?: number) {
+  borrar(id: number) {
     this.EducacionS.eliminarEducacion(id).subscribe(
       {
         next: data => {

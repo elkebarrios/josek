@@ -6,40 +6,53 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Redes</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form [formGroup]="form" name="redesform"></form>
+        <form [formGroup]="form" name="redesform">
         <div class="modal-body">
-          <select class="form-select mb-3" aria-label="Default select example">
-            <option selected>Nueva Red</option>
-            <option value="1">Instagram</option>
-            <option value="2">Git Hub</option>
-            <option value="3">Linkedin</option>
-          </select>
-          
+            <ul class="p-0">
+              <li *ngFor="let red of Redes" class="d-flex justify-content-between align-items-center m-1">
+                <span>{{red.id}}</span>
+                <span class="d-flex justify-content-between gap-2">
+                  <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0" (click)="borrar(red.id)">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(red.id)">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                </span>
+              </li>
+            </ul>
   
-          <div class="mb-3">
-            <label for="urlRed" class="form-label">Url Red</label>
-            <input type="url" class="form-control" id="urlRed" formControlName="link" [ngClass]="{'is-invalid': Link.errors && Link.touched, 'is-valid': !Link.errors && Link.touched}">
-          </div>
-          <div *ngIf="Link.errors && Link.touched">    
-            <p *ngIf="Link.hasError('required')" class="text-danger">
-             El Link de la Red es requerido.
-            </p>
-          </div> 
+            <div class="input-group mb-3 bg-light" *ngIf="!!form.value.id">
+              <div class="input-group-prepend border-0">
+                <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              </div>
+              <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+            </div>
   
-          <div class="mb-3">
-            <label for="iconoRed" class="form-label">Icono Red</label>
-            <input type="text" class="form-control" id="iconoRed" placeholder="inserte codifo fontawesome">
+            <div class="mb-3">
+              <label for="link" class="form-label">Link</label>
+              <input type="text" class="form-control" id="link" formControlName="link" [ngClass]="{'is-invalid': form.get('link')?.errors && form.get('link')?.touched, 'is-valid': form.get('link')?.errors && form.get('link')?.touched}">
+              <p class="text-danger"
+                *ngIf="form.get('link')?.touched && form.get('link')?.errors?.['required']">
+                El link es requerido.
+              </p>
+            </div>
+
+            <div class="mb-3">
+              <label for="icono" class="form-label">Icono</label>
+              <input type="text" class="form-control" id="titulo" formControlName="icono" [ngClass]="{'is-invalid': form.get('icono')?.errors && form.get('icono')?.touched, 'is-valid': form.get('icono')?.errors && form.get('icono')?.touched}">
+              <p class="text-danger"
+                *ngIf="form.get('icono')?.touched && form.get('icono')?.errors?.['required']">
+                El icono es requerido.
+              </p>
+            </div>
+  
           </div>
-          <div *ngIf="Icono.errors && Icono.touched">    
-            <p *ngIf="Icono.hasError('required')" class="text-danger">
-              El Icono de la Red es requerido.
-            </p>
-          </div> 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Guardar</button>
-          <button type="button" class="btn btn-danger">Borrar</button>
-        </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" (click)="form.reset()">Reset</button>
+            <button class="btn btn-primary" (click)="guardar()"  [disabled]="form.invalid">Guardar</button>
+          </div>
+      </form>
       </div>
     </div>
   </div>

@@ -20,17 +20,18 @@ export class ModalExperienciaComponent implements OnInit {
         nombreEmpresa:['',[Validators.required]],
         descripcionCargo:['',[Validators.required]],
         empleoActual:[''],
-        fechaInicio:[''],
-        fechaFin:[''],
-        aptitud:[''],
+        fechaInicio:['', [Validators.required]],
+        fechaFin:['', [Validators.required]],
+        aptitud:['', [Validators.required]],
+        logoEmpresa:['', [Validators.required]],
       })
     }
   
     ngOnInit(): void {
-      this.cargarEducacion();
+      this.cargarExperiencia();
     }
   
-    cargarEducacion(): void {
+    cargarExperiencia(): void {
       this.ExperienciaS.verExperiencias().subscribe(
         data => {
           this.experiencias = data;
@@ -38,7 +39,7 @@ export class ModalExperienciaComponent implements OnInit {
       )
     }
   
-    cargarDetalle(id?: number) {
+    cargarDetalle(id: number) {
       this.ExperienciaS.verExperiencia(id).subscribe(
         {
           next: (data) => {
@@ -55,35 +56,35 @@ export class ModalExperienciaComponent implements OnInit {
   
     //👇 esto es solo para hacer pruebas en local
     onImagenSeleccionada(e: any) {
-      let nombreImagen = e.target.files[0].name
-      let url = 'assets/img/' + nombreImagen;
-      this.form.patchValue({ logoInstitucion: url });
+    let nombreImagen = e.target.files[0].name
+    let url = 'assets/img/' + nombreImagen;
+      this.form.patchValue({ logoEmpresa: url });
       console.log(url);
     }
   
     guardar() {
-      let est = this.form.value;
+      let exp = this.form.value;
   
-      if (est.id == '') {
-        this.ExperienciaS.agregarExperiencia(est).subscribe(
+      if (exp.id == '') {
+        this.ExperienciaS.agregarExperiencia(exp).subscribe(
           data => {
             alert("Experiencia añadida");
-            this.cargarEducacion();
+            this.cargarExperiencia();
             this.form.reset();
           }
         )
       } else {
-        this.ExperienciaS.updateExperiencia(est).subscribe(
+        this.ExperienciaS.updateExperiencia(exp).subscribe(
           data => {
             alert("Experiencia modificada");
-            this.cargarEducacion();
+            this.cargarExperiencia();
             this.form.reset();
           }
         )
       }
     }
   
-    borrar(id?: number) {
+    borrar(id: number) {
       this.ExperienciaS.eliminarExperiencia(id).subscribe(
         {
           next: data => {

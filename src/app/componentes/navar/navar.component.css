@@ -23,3 +23,8 @@ i.fa-brands.fa-linkedin.fa-2xl:hover{
 i.fa-brands.fa-github.fa-2xl:hover{
     color:rgb(36, 225, 228)
 }
+
+/*color de boton icon*/
+.fa-solid{
+    color: black;
+}

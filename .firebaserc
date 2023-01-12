@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "portfolioelkebarrios": {
+      "hosting": {
+        "portfolioelke": [
+          "portfolioelkebarrios"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "portfolioelkebarrios"
+  }
+}

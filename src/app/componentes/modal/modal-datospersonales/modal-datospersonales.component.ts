@@ -15,10 +15,12 @@ export class ModalDatospersonalesComponent implements OnInit {
 
     constructor(private formBuilder: FormBuilder, private PersonaS: PersonaService ) {
       this.form=this.formBuilder.group({
+        id: [''],
         nombreperfil:['', [Validators.required]],
         tituloperfil:['',[Validators.required]],
         acercaDeMi:['',[Validators.required]],
         imagen:[''],
+        banner:[''],
            }) 
      }
 
@@ -44,7 +46,7 @@ export class ModalDatospersonalesComponent implements OnInit {
   )
   }
   
-    cargarDetalle(id?:number){
+    cargarDetalle(id:number){
       this.PersonaS.verPersona(id).subscribe(
         {
          next : (data) => {
@@ -63,15 +65,15 @@ export class ModalDatospersonalesComponent implements OnInit {
   onImagenSeleccionada(e: any) {
     let nombreImagen = e.target.files[0].name
     let url = 'assets/img/' + nombreImagen;
-    this.form.patchValue({ logoInstitucion: url });
+    this.form.patchValue({ imagen: url });
     console.log(url);
   }
 
   guardar() {
-    let est = this.form.value;
+    let per = this.form.value;
 
-    if (est.id == '') {
-      this.PersonaS.agregarPersona(est).subscribe(
+    if (per.id == '') {
+      this.PersonaS.agregarPersona(per).subscribe(
         data => {
           alert("Persona añadida");
           this.cargarPersona();
@@ -79,7 +81,7 @@ export class ModalDatospersonalesComponent implements OnInit {
         }
       )
     } else {
-      this.PersonaS.updatePersona(est).subscribe(
+      this.PersonaS.updatePersona(per).subscribe(
         data => {
           alert("Persona modificada");
           this.cargarPersona();
@@ -89,7 +91,7 @@ export class ModalDatospersonalesComponent implements OnInit {
     }
   }
 
-  borrar(id?: number) {
+  borrar(id: number) {
     this.PersonaS.eliminarPersona(id).subscribe(
       {
         next: data => {

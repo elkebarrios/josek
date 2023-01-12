@@ -10,6 +10,7 @@ import { RedService } from 'src/app/servicios/red.service';
 })
 export class NavarComponent implements OnInit {
   redes:Red[]=[];
+  usuarioAuth: boolean = false;
   constructor(private datos: RedService) { }
 
   ngOnInit(): void {

@@ -22,10 +22,12 @@ import { ModalEstudiosComponent } from './componentes/modal/modal-estudios/modal
 import { ModalHabilidadesComponent } from './componentes/modal/modal-habilidades/modal-habilidades.component';
 import { ModalProyectoComponent } from './componentes/modal/modal-proyecto/modal-proyecto.component';
 import { LogoutComponent } from './componentes/logout/logout.component';
-import { LoginComponent } from './componentes/login/login.component';
 import { LoginpaginaComponent } from './componentes/loginpagina/loginpagina.component';
-import { RegistroComponent } from './componentes/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -48,16 +50,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ModalHabilidadesComponent,
     ModalProyectoComponent,
     LogoutComponent,
-    LoginComponent,
     LoginpaginaComponent,
-    RegistroComponent
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]
