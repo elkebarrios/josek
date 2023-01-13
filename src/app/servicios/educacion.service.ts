@@ -9,7 +9,7 @@ import { Educacion } from '../modelos/educacion';
 export class EducacionService {
 
   //agregar url para conectar con el backend
-  url = 'http://localhost:8080/educacion/';
+  url = 'https://portfolio-back-elke.onrender.com/educacion/';
   //vamos a inyectar constructor de service e importamos
   constructor(private http:HttpClient) { }
   //vamos a declarar los metodos

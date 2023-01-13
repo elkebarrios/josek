@@ -8,7 +8,7 @@ import { Hard } from '../modelos/hard';
 })
 export class HardService {
 
-  url = 'http://localhost:8080/hard/';
+  url = 'https://portfolio-back-elke.onrender.com/hard/';
   constructor(private http:HttpClient) { }
 
   public verHards(): Observable<Hard[]> {

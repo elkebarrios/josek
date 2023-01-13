@@ -7,7 +7,7 @@ import { Red } from '../modelos/red';
   providedIn: 'root'
 })
 export class RedService {
-  url = 'http://localhost:8080/red/';
+  url = 'https://portfolio-back-elke.onrender.com/red/';
 
   constructor(private http:HttpClient) { }
 
