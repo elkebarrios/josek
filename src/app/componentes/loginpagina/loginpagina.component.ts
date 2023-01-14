@@ -33,7 +33,8 @@ export class LoginpaginaComponent implements OnInit {
         console.log(response);
         this.router.navigate(['dashboard']);
       })
-      .catch(error => console.error(error));
+      .catch(error => {console.error(error); 
+         alert("Usuario no registrado")});
   }
 
 
