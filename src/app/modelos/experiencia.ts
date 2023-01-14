@@ -19,14 +19,14 @@ export class Experiencia {
         nombreEmpresa: string,
         descripcionCargo: string,
         aptitud: string) {
-        
-            this.logoEmpresa = logoEmpresa;
-            this.cargo = cargo;
-            this.empleoActual = empleoActual;
-            this.fechaInicio = fechaInicio;
-            this.fechaFin = fechaFin;
-            this.nombreEmpresa = nombreEmpresa;
-            this.descripcionCargo = descripcionCargo;
-            this.aptitud = aptitud;
-}
+
+        this.logoEmpresa = logoEmpresa;
+        this.cargo = cargo;
+        this.empleoActual = empleoActual;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.nombreEmpresa = nombreEmpresa;
+        this.descripcionCargo = descripcionCargo;
+        this.aptitud = aptitud;
+    }
 }

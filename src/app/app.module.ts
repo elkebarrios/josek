@@ -24,10 +24,10 @@ import { ModalProyectoComponent } from './componentes/modal/modal-proyecto/modal
 import { LogoutComponent } from './componentes/logout/logout.component';
 import { LoginpaginaComponent } from './componentes/loginpagina/loginpagina.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideStorage,getStorage } from '@angular/fire/storage';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     ModalProyectoComponent,
     LogoutComponent,
     LoginpaginaComponent,
-   
+
   ],
   imports: [
     BrowserModule,

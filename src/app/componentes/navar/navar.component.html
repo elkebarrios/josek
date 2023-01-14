@@ -12,8 +12,7 @@
       <!-- Button que envia al login -->
       <li class="list-group-item">
         <a routerLink="/login" *ngIf="!usuarioAuth">
-          <i class="fa-solid fa-user-lock fa-2xl" type="button"
-          ></i
+          <i class="fa-solid fa-user-lock fa-2xl" type="button"></i
         ></a>
       </li>
       <app-logout *ngIf="usuarioAuth"></app-logout>

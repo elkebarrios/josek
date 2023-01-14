@@ -7,13 +7,13 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
-  modales:any;
+  modales: any;
   constructor(private datos: DatosService) { }
 
   ngOnInit(): void {
     this.datos.getDatos().subscribe(info => {
       this.modales = info.modales;
-      }
+    }
     )
   }
 

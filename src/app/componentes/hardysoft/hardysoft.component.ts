@@ -9,16 +9,13 @@ import { HardService } from 'src/app/servicios/hard.service';
   styleUrls: ['./hardysoft.component.css']
 })
 export class HardysoftComponent implements OnInit {
-  hardSkills:Hard[]=[];
+  hardSkills: Hard[] = [];
   constructor(private datos: HardService) { }
 
   ngOnInit(): void {
     this.datos.verHards().subscribe(info => {
       this.hardSkills = info;
-      }
-  
-      )
     }
-  
-
+    )
+  }
 }

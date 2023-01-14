@@ -11,16 +11,16 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 export class ModalProyectoComponent implements OnInit {
   form: FormGroup;
   proyectos: Proyecto[] = [];
-  
-    constructor(private formBuilder: FormBuilder, private ProyectoS: ProyectoService ){
-      this.form=this.formBuilder.group({
-        id: [''],
-        nombre:['',[Validators.required]],
-        imagenes:['', [Validators.required]],
-        descripcion:['',[Validators.required]],
-        link:['',[Validators.required]],
-           }) 
-    }
+
+  constructor(private formBuilder: FormBuilder, private ProyectoS: ProyectoService) {
+    this.form = this.formBuilder.group({
+      id: [''],
+      nombre: ['', [Validators.required]],
+      imagenes: ['', [Validators.required]],
+      descripcion: ['', [Validators.required]],
+      link: ['', [Validators.required]],
+    })
+  }
 
   ngOnInit(): void {
     this.cargarProyecto();
@@ -100,10 +100,10 @@ export class ModalProyectoComponent implements OnInit {
   //get Descripcion(){
   //  return this.form.get("descripcion");
   //}
- 
+
   //get Link(){
-   // return this.form.get("link");
+  // return this.form.get("link");
   //}
 
-  
+
 }

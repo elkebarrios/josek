@@ -5,8 +5,8 @@ export class Red {
     icono: string;
 
     constructor(link: string,
-        icono: string){
-            this.link = link;
-            this.icono = icono;
+        icono: string) {
+        this.link = link;
+        this.icono = icono;
     }
 }

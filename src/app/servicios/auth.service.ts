@@ -32,7 +32,7 @@ export class AuthService {
     return signOut(this.auth);
   }
 
-  getUserEmail(){
+  getUserEmail() {
     return this.auth.currentUser?.email;
   }
 }

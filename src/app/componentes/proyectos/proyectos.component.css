@@ -1,15 +1,15 @@
 ul.proyectos {
-    background-color: none;
-    display: inline-flex;
-    flex-direction:row;
-    justify-content: space-between;
-    }
-    .img-container{
-        width: 800px;
-        height: 400px;
-        overflow:hidden;
-      }
-      .img-container img{
-        width:100%;
-        height:auto
-      }
+  background-color: none;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.img-container {
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+}
+.img-container img {
+  width: 100%;
+  height: auto;
+}

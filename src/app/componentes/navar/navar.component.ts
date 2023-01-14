@@ -9,15 +9,14 @@ import { RedService } from 'src/app/servicios/red.service';
   styleUrls: ['./navar.component.css']
 })
 export class NavarComponent implements OnInit {
-  redes:Red[]=[];
+  redes: Red[] = [];
   usuarioAuth: boolean = false;
   constructor(private datos: RedService) { }
 
   ngOnInit(): void {
     this.datos.verRedes().subscribe(info => {
-    this.redes = info;
+      this.redes = info;
     }
     )
   }
-
 }

@@ -11,18 +11,18 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class ModalDatospersonalesComponent implements OnInit {
   form: FormGroup;
-  Personas: Persona[]=[];
+  Personas: Persona[] = [];
 
-    constructor(private formBuilder: FormBuilder, private PersonaS: PersonaService ) {
-      this.form=this.formBuilder.group({
-        id: [''],
-        nombreperfil:['', [Validators.required]],
-        tituloperfil:['',[Validators.required]],
-        acercaDeMi:['',[Validators.required]],
-        imagen:[''],
-        banner:[''],
-           }) 
-     }
+  constructor(private formBuilder: FormBuilder, private PersonaS: PersonaService) {
+    this.form = this.formBuilder.group({
+      id: [''],
+      nombreperfil: ['', [Validators.required]],
+      tituloperfil: ['', [Validators.required]],
+      acercaDeMi: ['', [Validators.required]],
+      imagen: [''],
+      banner: [''],
+    })
+  }
 
   ngOnInit(): void {
     this.cargarPersona();
@@ -38,27 +38,27 @@ export class ModalDatospersonalesComponent implements OnInit {
   //  return this.form.get("acercaDeMi");
   //}
 
-  cargarPersona():void{
+  cargarPersona(): void {
     this.PersonaS.verPersonas().subscribe(
       data => {
-      this.Personas = data;
+        this.Personas = data;
+      }
+    )
   }
-  )
-  }
-  
-    cargarDetalle(id:number){
-      this.PersonaS.verPersona(id).subscribe(
-        {
-         next : (data) => {
-            this.form.setValue(data);
-          },
-          error: (e) => {
-            console.error(e)
-            alert("error al modificar")
-          },
-          complete: () => console.info('complete')
-        }
-      )
+
+  cargarDetalle(id: number) {
+    this.PersonaS.verPersona(id).subscribe(
+      {
+        next: (data) => {
+          this.form.setValue(data);
+        },
+        error: (e) => {
+          console.error(e)
+          alert("error al modificar")
+        },
+        complete: () => console.info('complete')
+      }
+    )
   }
 
   //👇 esto es solo para hacer pruebas en local
@@ -112,7 +112,7 @@ export class ModalDatospersonalesComponent implements OnInit {
   //}
 
 
-  /*get TituloObtenidoValid() {
-    return this.TituloObtenido?.touched && !this.TituloObtenido?.valid;
-  } */
+/*get TituloObtenidoValid() {
+  return this.TituloObtenido?.touched && !this.TituloObtenido?.valid;
+} */
 

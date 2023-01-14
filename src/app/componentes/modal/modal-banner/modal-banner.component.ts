@@ -8,14 +8,14 @@ import { DatosService } from 'src/app/servicios/datos.service';
 })
 export class ModalBannerComponent implements OnInit {
 
-  modalesbanner:any;
-  
+  modalesbanner: any;
+
   constructor(private datos: DatosService) { }
 
   ngOnInit(): void {
     this.datos.getDatos().subscribe(info => {
       this.modalesbanner = info.modalesbanner;
-      }
+    }
     )
   }
 

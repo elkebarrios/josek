@@ -13,13 +13,13 @@ export class ModalHabilidadesComponent implements OnInit {
   form: FormGroup;
   hards: Hard[] = [];
 
-    constructor(private formBuilder: FormBuilder, private HardS: HardService ) { 
-      this.form=this.formBuilder.group({
-        id: [''],
-        habilidad:['',[Validators.required]],
-        porcentaje:['',[Validators.required]],
-           })  
-    }
+  constructor(private formBuilder: FormBuilder, private HardS: HardService) {
+    this.form = this.formBuilder.group({
+      id: [''],
+      habilidad: ['', [Validators.required]],
+      porcentaje: ['', [Validators.required]],
+    })
+  }
 
   ngOnInit(): void {
     this.cargarHard();
@@ -48,7 +48,7 @@ export class ModalHabilidadesComponent implements OnInit {
     )
   }
 
-  
+
   guardar() {
     let hard = this.form.value;
 

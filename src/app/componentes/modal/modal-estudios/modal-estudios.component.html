@@ -1,22 +1,44 @@
 <!-- Modal Estudios -->
-<div class="modal fade" id="estudiosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="estudiosModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Estudios</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
 
       <form [formGroup]="form" name="educacionform">
         <div class="modal-body">
           <ul class="p-0">
-            <li *ngFor="let educacion of educaciones" class="d-flex justify-content-between align-items-center m-1">
-              <span>{{educacion.id}} - {{educacion.tituloObtenido}}</span>
+            <li
+              *ngFor="let educacion of educaciones"
+              class="d-flex justify-content-between align-items-center m-1"
+            >
+              <span>{{ educacion.id }} - {{ educacion.tituloObtenido }}</span>
               <span class="d-flex justify-content-between gap-2">
-                <button type="button" class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0" (click)="borrar(educacion.id)">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-danger pl-1 pr-1 m-0"
+                  (click)="borrar(educacion.id)"
+                >
                   <i class="fa-solid fa-trash"></i>
                 </button>
-                <button type="button" class="btn btn-sm btn-outline-success pl-1 pr-1 m-0" (click)="cargarDetalle(educacion.id)">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-success pl-1 pr-1 m-0"
+                  (click)="cargarDetalle(educacion.id)"
+                >
                   <i class="fa-solid fa-pen"></i>
                 </button>
               </span>
@@ -25,87 +47,149 @@
 
           <div class="input-group mb-3 bg-light" *ngIf="!!form.value.id">
             <div class="input-group-prepend border-0">
-              <span class="input-group-text border-0" id="basic-addon1">ID:</span>
+              <span class="input-group-text border-0" id="basic-addon1"
+                >ID:</span
+              >
             </div>
-            <input class="form-control outline-none border-0 bg-transparent" type="text" readonly formControlName="id">
+            <input
+              class="form-control outline-none border-0 bg-transparent"
+              type="text"
+              readonly
+              formControlName="id"
+            />
           </div>
 
           <div class="mb-3">
-            <label for="nombreInstitucion" class="form-label">Nombre de la Institución</label>
-            <input type="text" class="form-control" id="nombreInstitucion" formControlName="nombreInstitucion" [ngClass]="{
-              'is-invalid':
-                form.get('nombreInstitucion').errors &&
-                form.get('nombreInstitucion').touched,
-              'is-valid':
-                form.get('nombreInstitucion').errors &&
-                form.get('nombreInstitucion').touched
-            }">
-            <p class="text-danger"
-              *ngIf="form.get('nombreInstitucion')?.touched && form.get('nombreInstitucion')?.errors?.['required']">
+            <label for="nombreInstitucion" class="form-label"
+              >Nombre de la Institución</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="nombreInstitucion"
+              formControlName="nombreInstitucion"
+              [ngClass]="{
+                'is-invalid':
+                  form.get('nombreInstitucion').errors &&
+                  form.get('nombreInstitucion').touched,
+                'is-valid':
+                  form.get('nombreInstitucion').errors &&
+                  form.get('nombreInstitucion').touched
+              }"
+            />
+            <p
+              class="text-danger"
+              *ngIf="form.get('nombreInstitucion')?.touched && form.get('nombreInstitucion')?.errors?.['required']"
+            >
               El nombre de la institución es requerido
             </p>
           </div>
 
           <div class="input-group mb-3">
-            <label for="logoInstitucion" class="form-label">Seleccionar el logo de la Institución</label>
-            <input hidden type="file" (change)="onImagenSeleccionada($event)" #hiddenfileinput>
+            <label for="logoInstitucion" class="form-label"
+              >Seleccionar el logo de la Institución</label
+            >
+            <input
+              hidden
+              type="file"
+              (change)="onImagenSeleccionada($event)"
+              #hiddenfileinput
+            />
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <button (click)="hiddenfileinput.click()" class="btn btn-outline-secondary" type="button">
+                <button
+                  (click)="hiddenfileinput.click()"
+                  class="btn btn-outline-secondary"
+                  type="button"
+                >
                   <i class="fa-solid fa-file-import"></i>
                 </button>
               </div>
-              <input class="form-control" type="text" id="logoInstitucion" formControlName="logoInstitucion" placeholder="assets/img/ejemplo.webp" [ngClass]="{
-                'is-invalid':
-                  form.get('logoInstitucion').errors &&
-                  form.get('logoInstitucion').touched,
-                'is-valid':
-                  form.get('logoInstitucion').errors &&
-                  form.get('logoInstitucion').touched
-              }">
+              <input
+                class="form-control"
+                type="text"
+                id="logoInstitucion"
+                formControlName="logoInstitucion"
+                placeholder="assets/img/ejemplo.webp"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('logoInstitucion').errors &&
+                    form.get('logoInstitucion').touched,
+                  'is-valid':
+                    form.get('logoInstitucion').errors &&
+                    form.get('logoInstitucion').touched
+                }"
+              />
             </div>
-            <p class="text-danger"
-              *ngIf="form.get('logoInstitucion')?.touched && form.get('logoInstitucion').errors?.['required']">
+            <p
+              class="text-danger"
+              *ngIf="form.get('logoInstitucion')?.touched && form.get('logoInstitucion').errors?.['required']"
+            >
               La imagen es requerida
             </p>
           </div>
 
           <div class="mb-3">
             <label for="titulo" class="form-label">Título Obtenido</label>
-            <input type="text" class="form-control" id="titulo" formControlName="tituloObtenido" [ngClass]="{
-              'is-invalid':
-                form.get('tituloObtenido').errors &&
-                form.get('tituloObtenido').touched,
-              'is-valid':
-                form.get('tituloObtenido').errors &&
-                form.get('tituloObtenido').touched
-            }">
-            <p class="text-danger"
-              *ngIf="form.get('tituloObtenido')?.touched && form.get('tituloObtenido')?.errors?.['required']">
+            <input
+              type="text"
+              class="form-control"
+              id="titulo"
+              formControlName="tituloObtenido"
+              [ngClass]="{
+                'is-invalid':
+                  form.get('tituloObtenido').errors &&
+                  form.get('tituloObtenido').touched,
+                'is-valid':
+                  form.get('tituloObtenido').errors &&
+                  form.get('tituloObtenido').touched
+              }"
+            />
+            <p
+              class="text-danger"
+              *ngIf="form.get('tituloObtenido')?.touched && form.get('tituloObtenido')?.errors?.['required']"
+            >
               El Titulo es requerido
             </p>
           </div>
 
           <div class="mb-3">
-            <label for="fechaFin" class="form-label">Fecha de Finalización</label>
-            <input type="date" class="form-control" id="fechaFin" placeholder="" formControlName="fechaFin" [ngClass]="{
-              'is-invalid':
-                form.get('fechaFin').errors &&
-                form.get('fechaFin').touched,
-              'is-valid':
-                form.get('fechaFin').errors &&
-                form.get('fechaFin').touched
-            }">
-            <p class="text-danger"
-              *ngIf="form.get('fechaFin')?.touched && form.get('fechaFin')?.errors?.['required']">
+            <label for="fechaFin" class="form-label"
+              >Fecha de Finalización</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="fechaFin"
+              placeholder=""
+              formControlName="fechaFin"
+              [ngClass]="{
+                'is-invalid':
+                  form.get('fechaFin').errors && form.get('fechaFin').touched,
+                'is-valid':
+                  form.get('fechaFin').errors && form.get('fechaFin').touched
+              }"
+            />
+            <p
+              class="text-danger"
+              *ngIf="form.get('fechaFin')?.touched && form.get('fechaFin')?.errors?.['required']"
+            >
               La fecha de finalización es requerida
             </p>
           </div>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" (click)="form.reset()">Reset</button>
-          <button class="btn btn-primary" (click)="guardar()"  [disabled]="form.invalid">Guardar</button>
+          <button class="btn btn-secondary" (click)="form.reset()">
+            Reset
+          </button>
+          <button
+            class="btn btn-primary"
+            (click)="guardar()"
+            [disabled]="form.invalid"
+          >
+            Guardar
+          </button>
         </div>
       </form>
     </div>

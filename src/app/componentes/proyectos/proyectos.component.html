@@ -10,17 +10,20 @@
           <h5 class="descripcion">{{ proyecto.descripcion }}</h5>
           <p><a [href]="proyecto.link" target="_blank">Link Portfolio</a></p>
           <br />
-          <ul
-            class="proyectos list-group list-group-horizontal">
-              <div class="img-container">
+          <ul class="proyectos list-group list-group-horizontal">
+            <div class="img-container">
               <li class="list-group-item">
-                <img [src]="proyecto.imagenes" class="rounded float" alt="foto" />
+                <img
+                  [src]="proyecto.imagenes"
+                  class="rounded float"
+                  alt="foto"
+                />
               </li>
-             </div>
+            </div>
           </ul>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 </section>
 

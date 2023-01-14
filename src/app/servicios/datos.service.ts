@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class DatosService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-//vamos a crear un metodo para que el servicio tome datos//
-getDatos ():Observable<any>{
-return this.http.get('./assets/db/basededatos.json');
+  //vamos a crear un metodo para que el servicio tome datos//
+  getDatos(): Observable<any> {
+    return this.http.get('./assets/db/basededatos.json');
 
-} 
-//"../assets/img/fondoPaisaje.jpg"
+  }
+  //"../assets/img/fondoPaisaje.jpg"
 
 }

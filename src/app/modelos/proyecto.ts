@@ -9,9 +9,9 @@ export class Proyecto {
     constructor(nombre: string,
         imagenes: string,
         descripcion: string,
-        link: string){
+        link: string) {
 
-            this.nombre = nombre;
+        this.nombre = nombre;
         this.imagenes = imagenes;
         this.descripcion = descripcion;
         this.link = link;

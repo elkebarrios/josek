@@ -9,26 +9,26 @@ import { Hard } from '../modelos/hard';
 export class HardService {
 
   url = 'https://portfolio-back-elke.onrender.com/hard/';
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   public verHards(): Observable<Hard[]> {
-    return this.http.get<Hard[]>(this.url+'ver');
-      }
+    return this.http.get<Hard[]>(this.url + 'ver');
+  }
 
-  public verHard(id:number): Observable<Hard> {
-    return this.http.get<Hard>(this.url+`ver/${id}`);
-          } 
+  public verHard(id: number): Observable<Hard> {
+    return this.http.get<Hard>(this.url + `ver/${id}`);
+  }
 
-  public agregarHard(hard:Hard): Observable<any> {
-    return this.http.post<any>(this.url+'new', hard);
-      }       
-     
-  public updateHard(hard:Hard): Observable<any> {
-    return this.http.put<any>(this.url+'update', hard);
-    } 
+  public agregarHard(hard: Hard): Observable<any> {
+    return this.http.post<any>(this.url + 'new', hard);
+  }
 
-  public eliminarHard(id:number): Observable<any> {
-    return this.http.delete<any>(this.url+`delete/${id}`);
-          } 
+  public updateHard(hard: Hard): Observable<any> {
+    return this.http.put<any>(this.url + 'update', hard);
+  }
+
+  public eliminarHard(id: number): Observable<any> {
+    return this.http.delete<any>(this.url + `delete/${id}`);
+  }
 
 }

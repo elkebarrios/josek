@@ -7,12 +7,12 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./logout.component.css']
 })
 export class LogoutComponent implements OnInit {
-  logouts:any;
+  logouts: any;
   constructor(private datos: DatosService) { }
 
   ngOnInit(): void {
     this.datos.getDatos().subscribe(info => {
-    this.logouts = info.logouts;
+      this.logouts = info.logouts;
     }
     )
   }

@@ -9,13 +9,13 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
-  proyectos:Proyecto[]=[];
+  proyectos: Proyecto[] = [];
   constructor(private datos: ProyectoService) { }
 
   ngOnInit(): void {
     this.datos.verProyectos().subscribe(info => {
       this.proyectos = info;
-      }
+    }
     )
   }
 }

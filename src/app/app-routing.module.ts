@@ -7,11 +7,11 @@ import { LoginpaginaComponent } from './componentes/loginpagina/loginpagina.comp
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
-  {path: '', component:IndexComponent, },
-  {path: 'login', component:LoginpaginaComponent, ...canActivate(() => redirectUnauthorizedTo(['/login'])) },
-  {path: 'dashboard', component:DashboardComponent, },
-  {path: '**', component:Error404Component},
-  {path: '',redirectTo: 'login', pathMatch: 'full'}
+  { path: '', component: IndexComponent, },
+  { path: 'login', component: LoginpaginaComponent, ...canActivate(() => redirectUnauthorizedTo(['/login'])) },
+  { path: 'dashboard', component: DashboardComponent, },
+  { path: '**', component: Error404Component },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({

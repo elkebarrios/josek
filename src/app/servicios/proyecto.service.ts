@@ -9,26 +9,26 @@ import { Proyecto } from '../modelos/proyecto';
 export class ProyectoService {
   url = 'https://portfolio-back-elke.onrender.com/proyecto/';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   public verProyectos(): Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(this.url+'ver');
-      }
+    return this.http.get<Proyecto[]>(this.url + 'ver');
+  }
 
-  public verProyecto(id:number): Observable<Proyecto> {
-    return this.http.get<Proyecto>(this.url+`ver/${id}`);
-          } 
+  public verProyecto(id: number): Observable<Proyecto> {
+    return this.http.get<Proyecto>(this.url + `ver/${id}`);
+  }
 
-  public agregarProyecto(pro:Proyecto): Observable<any> {
-    return this.http.post<any>(this.url+'new', pro);
-      }       
-     
-  public updateProyecto(pro:Proyecto): Observable<any> {
-    return this.http.put<any>(this.url+'update', pro);
-    } 
+  public agregarProyecto(pro: Proyecto): Observable<any> {
+    return this.http.post<any>(this.url + 'new', pro);
+  }
 
-  public eliminarProyecto(id:number): Observable<any> {
-    return this.http.delete<any>(this.url+`delete/${id}`);
-          } 
+  public updateProyecto(pro: Proyecto): Observable<any> {
+    return this.http.put<any>(this.url + 'update', pro);
+  }
+
+  public eliminarProyecto(id: number): Observable<any> {
+    return this.http.delete<any>(this.url + `delete/${id}`);
+  }
 
 }

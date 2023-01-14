@@ -10,7 +10,7 @@ export class Educacion {
         nombreInstitucion: string,
         tituloObtenido: string,
         fechaFin: string) {
-        
+
         this.logoInstitucion = logoInstitucion;
         this.nombreInstitucion = nombreInstitucion;
         this.tituloObtenido = tituloObtenido;
