@@ -34,7 +34,7 @@ export class LoginpaginaComponent implements OnInit {
       })
       .catch(error => {
         console.error(error);
-        alert("Usuario no registrado")
+        alert("Usuario o clave invalida")
       });
   }
 }
