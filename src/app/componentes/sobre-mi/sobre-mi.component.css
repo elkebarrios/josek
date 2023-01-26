@@ -7,7 +7,7 @@ section.banner {
 }
 /*seccion banner*/
 h3.intro {
-  padding-top: 15%;
+  padding-top: 3%;
   font-size: 3.25rem;
 }
 /*seccion banner*/
@@ -17,4 +17,8 @@ h1.intro {
 /*seccion banner*/
 h2.intro {
   font-size: 3.25rem;
+}
+.img-fluid{
+  max-width: 250%;
+  min-width: 100%;
 }
